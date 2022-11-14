@@ -3,6 +3,7 @@ import { BiSearch } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import Button from "../Component/Button";
 import Footer from "../Section/Footer";
+import Form from "../Component/Form";
 
 function Home() {
   return (
@@ -36,18 +37,13 @@ function Home() {
               alt="logo"
             />
           </div>
-          <form action="" className="form_area">
-            <input type="search" />
-            <div className="search_icon">
-              <button type="submit">
-                <BiSearch />
-              </button>
-            </div>
-            <div className="search_btn_area">
+          <Form  > 
+          <div className="search_btn_area" >
               <Button title="Google Search" />
               <Button title="I'm Feeling Lucky" />
             </div>
-          </form>
+          </Form>
+        
         </section>
         <Footer />
       </section>
