@@ -91,12 +91,17 @@ ul li {
 
 /* Search Body Section */
 .search_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  height: 100%;
 }
 .search_wrapper .form_area {
   position: relative;
   max-width: 582px;
-  width: 100%;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
