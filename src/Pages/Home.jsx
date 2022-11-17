@@ -1,11 +1,29 @@
+import { useState } from "react";
 import { BsGrid3X3Gap } from "react-icons/bs";
-import { BiSearch } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../Component/Button";
 import Footer from "../Section/Footer";
 import Form from "../Component/Form";
+import { actionTypes } from "../Context/reducer";
+import { useStateValue } from "../Context/StateProvider";
 
 function Home() {
+  const [inputForm, setInputForm] = useState("");
+  const [{}, dispatch] = useStateValue();
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setInputForm(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch({
+      type: "SET_SEARCH_TERM",
+      term: inputForm,
+    });
+    navigate("/search");
+  };
   return (
     <>
       <section className="main_page_wrapper">
@@ -37,13 +55,16 @@ function Home() {
               alt="logo"
             />
           </div>
-          <Form  > 
-          <div className="search_btn_area" >
+          <Form
+            inputValue={inputForm}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+          >
+            <div className="search_btn_area">
               <Button title="Google Search" />
               <Button title="I'm Feeling Lucky" />
             </div>
           </Form>
-        
         </section>
         <Footer />
       </section>
