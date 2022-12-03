@@ -22,6 +22,7 @@ function Home() {
       type: "SET_SEARCH_TERM",
       term: inputForm,
     });
+    localStorage.setItem("searchInput",inputForm)
     navigate("/search");
   };
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Form from "../Component/Form";
 import Response from "../Component/Response";
@@ -9,10 +9,30 @@ import { AiOutlinePlaySquare } from "react-icons/ai";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import Footer from "../Section/Footer";
 function Search() {
+  const [inputForm, setInputForm] = useState("");
   const [{ term }, dispatch] = useStateValue();
   //Live Call Api
   // const {data} =useGoogleSearch(term)
   const data = Response;
+  const handleChange = (e) => {
+    setInputForm(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: "SET_SEARCH_TERM",
+      term: inputForm,
+    });
+    localStorage.setItem("searchInput",inputForm)
+  };
+
+  //Get value from localStorage
+  useEffect(() => {
+    const getValue = localStorage.getItem("searchInput");
+    if (getValue.length > 0) {
+      setInputForm(getValue);
+    }
+  }, []);
 
   return (
     <>
@@ -25,7 +45,11 @@ function Search() {
             />
           </div>
           <div className="serach_page_box_area">
-            <Form />
+            <Form
+              inputValue={inputForm}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+            />
             <div className="search_menu_area">
               <ul>
                 <li>
