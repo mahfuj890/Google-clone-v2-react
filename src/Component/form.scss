@@ -1,13 +1,12 @@
 .form_area {
     position: relative;
-    width: 10%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
     input {
       font-size: 16px;
-      padding-left: 50px;
-      padding-right: 10px;
+      padding: 0 50px;
       background: #fff;
       border: 1px solid #dfe1e5;
       border-radius: 24px;
@@ -19,7 +18,7 @@
         outline: none;
       }
     }
-    .search_icon {
+    .search_icon,.mic_icon_area {
       position: absolute;
       left: 15px;
       top: 8px;
@@ -44,6 +43,14 @@
         }
       }
     }
+    .mic_icon_area{
+      left: auto;
+      right: 15px;
+    }
+    ::placeholder{
+      font-size: 14px;
+    }
+    
   }
   .search_btn_area {
     display: flex;

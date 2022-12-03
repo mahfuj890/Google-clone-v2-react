@@ -1,14 +1,13 @@
 .form_area {
   position: relative;
-  width: 10%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
 }
 .form_area input {
   font-size: 16px;
-  padding-left: 50px;
-  padding-right: 10px;
+  padding: 0 50px;
   background: #fff;
   border: 1px solid #dfe1e5;
   border-radius: 24px;
@@ -19,12 +18,12 @@
   border: 1px solid #4285f4;
   outline: none;
 }
-.form_area .search_icon {
+.form_area .search_icon, .form_area .mic_icon_area {
   position: absolute;
   left: 15px;
   top: 8px;
 }
-.form_area .search_icon button {
+.form_area .search_icon button, .form_area .mic_icon_area button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,8 +40,21 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-.form_area .search_icon button:hover {
+.form_area .search_icon button:hover, .form_area .mic_icon_area button:hover {
   background-color: rgba(60, 64, 67, 0.08);
+}
+.form_area .mic_icon_area {
+  left: auto;
+  right: 15px;
+}
+.form_area ::-moz-placeholder {
+  font-size: 14px;
+}
+.form_area :-ms-input-placeholder {
+  font-size: 14px;
+}
+.form_area ::placeholder {
+  font-size: 14px;
 }
 
 .search_btn_area {

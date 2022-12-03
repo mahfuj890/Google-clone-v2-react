@@ -14,6 +14,10 @@ html,
 body {
   overflow-x: hidden;
 }
+img,
+svg {
+  max-width: 100%;
+}
 button {
   cursor: pointer;
   border: none;
@@ -91,14 +95,141 @@ ul {
   text-align: center;
   height: 100%;
   .form_area {
-
     max-width: 582px;
     width: 85%;
     margin-top: 20px;
-  
   }
- 
 }
-/*  Section */
+/* Search Page Section */
+.search_page_wrapper {
+  margin: 20px 0 50px 0;
+  .search_header_area {
+    display: grid;
+    grid-template-columns: minmax(0, 150px) minmax(0, 1fr);
+    align-items: start;
+    gap: 20px 50px;
+    padding-left: 100px;
+    &:nth-child(1) {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ebebeb;
+    }
+    .serach_page_box_area {
+      max-width: 600px;
+    }
+    .form_area {
+      margin-top: 0;
+      margin-left: inherit;
+      margin-right: inherit;
+      input {
+        padding-left: 20px;
+        padding-right: 90px;
+      }
+      .search_icon {
+        left: auto;
+        right: 15px;
+      }
+      .mic_icon_area {
+        right: 50px;
+      }
+    }
+  }
+
+  .search_menu_area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    a,
+    button {
+      font-size: 14px;
+      font-weight: 400;
+      color: #5f6368;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    .active {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 100%;
+        height: 2px;
+        background: #1a73e8;
+      }
+      path {
+        fill: #1a73e8;
+      }
+      span {
+        color: #1a73e8;
+      }
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      a,
+      button {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+    }
+  }
+
+  .serach_conent_wrapper {
+    margin-top: 10px;
+  }
+  .search_timing_area {
+    p {
+      font-size: 12px;
+      font-weight: 400;
+      color: #70757a;
+    }
+  }
+
+  .serach_conent_wrapper {
+    max-width: 600px;
+    width: 100%;
+  }
+  .serach_result_item {
+    margin-top: 15px;
+    .search_link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      font-weight: 400;
+      color: #141515;
+      &:hover {
+        opacity: 0.8;
+        text-decoration: none;
+      }
+    }
+    .link_short_img {
+      img {
+        width: 20px;
+        height: 15px;
+        object-fit: cover;
+      }
+    }
+    .serch_title {
+      font-size: 20px;
+      font-weight: 400;
+      color: #1a73e8;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
+}
 /*  Section */
 /*  Section */
