@@ -109,12 +109,26 @@ ul {
     align-items: start;
     gap: 20px 50px;
     padding-left: 100px;
+    @media screen and  (max-width:991px) 
+      
+      {
+      grid-template-columns: minmax(0, 1fr);
+      padding: 0 20px;
+      max-width: 600px;
+      .google_logo{
+        text-align: center;
+     img{
+      max-width: 100px;
+     }
+      }
+    }
     &:nth-child(1) {
       padding-bottom: 10px;
       border-bottom: 1px solid #ebebeb;
     }
     .serach_page_box_area {
       max-width: 600px;
+      width: 100%;
     }
     .form_area {
       margin-top: 0;
@@ -231,5 +245,37 @@ ul {
     }
   }
 }
-/*  Section */
+/* Testing Page  */
+.testing_wrapper{
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 20px;
+  .testing_content_area{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 5px 5px #dad4d4b5;
+    background-color: #1d1d1d;
+    padding: 10px;
+    h3{
+      font-size: 24px;
+      color: white;
+    }
+    h4{
+      font-size: 16px;
+      font-weight: 400;
+      color: #ff1903;
+    }
+    
+  }
+}
 /*  Section */

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Form from "../Component/Form";
 import Response from "../Component/Response";
 import { useStateValue } from "../Context/StateProvider";
@@ -10,10 +10,14 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 import Footer from "../Section/Footer";
 function Search() {
   const [inputForm, setInputForm] = useState("");
+  const [serchValueCount, setSerchValueCount] = useState(0);
   const [{ term }, dispatch] = useStateValue();
   //Live Call Api
   // const {data} =useGoogleSearch(term)
   const data = Response;
+  const navigate = useNavigate();
+
+  const getCountValue = localStorage.getItem("searchCount");
   const handleChange = (e) => {
     setInputForm(e.target.value);
   };
@@ -23,14 +27,26 @@ function Search() {
       type: "SET_SEARCH_TERM",
       term: inputForm,
     });
-    localStorage.setItem("searchInput",inputForm)
+    setSerchValueCount(() => serchValueCount + 1);
+    localStorage.setItem("searchInput", inputForm);
+    localStorage.setItem("searchCount", serchValueCount);
+
+    if (getCountValue >= 10) {
+      navigate("/testing");
+    }
   };
 
   //Get value from localStorage
   useEffect(() => {
     const getValue = localStorage.getItem("searchInput");
-    if (getValue.length > 0) {
+    const getTotalValue = localStorage.getItem("searchTotal");
+
+    if (getValue?.length > 0) {
       setInputForm(getValue);
+    }
+
+    if (getCountValue >= 10) {
+      navigate("/testing");
     }
   }, []);
 
@@ -53,29 +69,19 @@ function Search() {
             <div className="search_menu_area">
               <ul>
                 <li>
-                  <NavLink className="active" to={"/under-development"}>
-                    <BiSearch size={16} /> <span>All</span>
-                  </NavLink>
+                  <BiSearch size={16} /> <span>All</span>
                 </li>
                 <li>
-                  <NavLink to={"/under-development"}>
-                    <BiImages size={16} /> <span>Images</span>
-                  </NavLink>
+                  <BiImages size={16} /> <span>Images</span>
                 </li>
                 <li>
-                  <NavLink to={"/under-development"}>
-                    <BiNews size={16} /> <span>News</span>
-                  </NavLink>
+                  <BiNews size={16} /> <span>News</span>
                 </li>
                 <li>
-                  <NavLink to={"/under-development"}>
-                    <AiOutlinePlaySquare size={16} /> <span>Videos</span>
-                  </NavLink>
+                  <AiOutlinePlaySquare size={16} /> <span>Videos</span>
                 </li>
                 <li>
-                  <NavLink to={"/under-development"}>
-                    <HiOutlineDotsVertical size={16} /> <span>More</span>
-                  </NavLink>
+                  <HiOutlineDotsVertical size={16} /> <span>More</span>
                 </li>
               </ul>
               <div>

@@ -120,12 +120,26 @@ ul li {
   gap: 20px 50px;
   padding-left: 100px;
 }
+@media screen and (max-width: 991px) {
+  .search_page_wrapper .search_header_area {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 20px;
+    max-width: 600px;
+  }
+  .search_page_wrapper .search_header_area .google_logo {
+    text-align: center;
+  }
+  .search_page_wrapper .search_header_area .google_logo img {
+    max-width: 100px;
+  }
+}
 .search_page_wrapper .search_header_area:nth-child(1) {
   padding-bottom: 10px;
   border-bottom: 1px solid #ebebeb;
 }
 .search_page_wrapper .search_header_area .serach_page_box_area {
   max-width: 600px;
+  width: 100%;
 }
 .search_page_wrapper .search_header_area .form_area {
   margin-top: 0;
@@ -235,5 +249,37 @@ ul li {
   font-size: 13px;
 }
 
-/*  Section */
+/* Testing Page  */
+.testing_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 20px;
+}
+.testing_wrapper .testing_content_area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 400px;
+  max-width: 400px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 2px 5px 5px rgba(218, 212, 212, 0.7098039216);
+  background-color: #1d1d1d;
+  padding: 10px;
+}
+.testing_wrapper .testing_content_area h3 {
+  font-size: 24px;
+  color: white;
+}
+.testing_wrapper .testing_content_area h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ff1903;
+}
+
 /*  Section *//*# sourceMappingURL=App.css.map */
