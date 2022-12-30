@@ -36,6 +36,15 @@ ul {
     list-style: none;
   }
 }
+.search_again_btn {
+  color: black;
+  background: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
 /* Main Section */
 .main_page_wrapper {
   display: flex;
@@ -109,17 +118,15 @@ ul {
     align-items: start;
     gap: 20px 50px;
     padding-left: 100px;
-    @media screen and  (max-width:991px) 
-      
-      {
+    @media screen and (max-width: 991px) {
       grid-template-columns: minmax(0, 1fr);
       padding: 0 20px;
       max-width: 600px;
-      .google_logo{
+      .google_logo {
         text-align: center;
-     img{
-      max-width: 100px;
-     }
+        img {
+          max-width: 100px;
+        }
       }
     }
     &:nth-child(1) {
@@ -246,15 +253,15 @@ ul {
   }
 }
 /* Testing Page  */
-.testing_wrapper{
-   display: flex;
+.testing_wrapper {
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
   min-height: 100vh;
   padding: 20px;
-  .testing_content_area{
-     display: flex;
+  .testing_content_area {
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -266,16 +273,15 @@ ul {
     box-shadow: 2px 5px 5px #dad4d4b5;
     background-color: #1d1d1d;
     padding: 10px;
-    h3{
+    h3 {
       font-size: 24px;
       color: white;
     }
-    h4{
+    h4 {
       font-size: 16px;
       font-weight: 400;
       color: #ff1903;
     }
-    
   }
 }
 /*  Section */

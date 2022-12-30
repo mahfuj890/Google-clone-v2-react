@@ -42,6 +42,16 @@ ul li {
   list-style: none;
 }
 
+.search_again_btn {
+  color: black;
+  background: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
 /* Main Section */
 .main_page_wrapper {
   display: flex;
